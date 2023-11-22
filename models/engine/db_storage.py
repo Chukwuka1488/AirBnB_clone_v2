@@ -7,6 +7,8 @@ from models.base_model import Base
 from models.state import State
 from models.city import City
 from models.user import User
+from models.place import Place
+
 class DBStorage:
     """This class manages storage of hbnb models in a database"""
     __engine = None
@@ -27,13 +29,15 @@ class DBStorage:
         """Query all objects or objects of a specific class"""
         obj_dict = {}
         if cls:
-            if isinstance(cls, str):  # If cls is a string, convert it to class object
+            # If cls is a string, convert it to class object
+            if isinstance(cls, str):
                 cls = eval(cls)
             for obj in self.__session.query(cls).all():
                 key = f'{obj.__class__.__name__}.{obj.id}'
                 obj_dict[key] = obj
         else:
-            classes = [State, City, User]  # Add other classes here
+            # Add other classes here
+            classes = [State, City, User, Place] 
             for cls in classes:
                 for obj in self.__session.query(cls).all():
                     key = f'{obj.__class__.__name__}.{obj.id}'

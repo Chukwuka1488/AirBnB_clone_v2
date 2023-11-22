@@ -142,4 +142,4 @@ Usage: <class_name>.update(<_id>, <dictionary>)
 ```
 <br>
 
-echo 'create City state_id="39ca7a70-40ee-4cb7-b6ed-b5aea6a9f1fa" name="San_Jose"' | HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./console.py
+echo 'create Place city_id="1be183e2-ca8d-495b-8ab8-44ee671513fd" user_id="942c6815-b0c0-4785-a4b4-5dd49d3c87a9" name="Lovely_place" number_rooms=3 number_bathrooms=1 max_guest=6 price_by_night=120 latitude=37.773972 longitude=-122.431297' | HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./console.py

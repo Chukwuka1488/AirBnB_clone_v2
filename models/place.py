@@ -4,6 +4,7 @@ from models.base_model import BaseModel, Base
 import models
 from sqlalchemy import Column, String, Integer, Float, ForeignKey
 
+
 class Place(BaseModel, Base):
     """ A place to stay """
     if models.storage_table == 'db':
