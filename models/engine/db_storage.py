@@ -9,6 +9,7 @@ from models.city import City
 from models.user import User
 from models.place import Place
 from models.review import Review
+from models.amenity import Amenity
 
 
 class DBStorage:
@@ -39,7 +40,7 @@ class DBStorage:
                 obj_dict[key] = obj
         else:
             # Add other classes here
-            classes = [State, City, User, Place, Review] 
+            classes = [State, City, User, Place, Review, Amenity] 
             for cls in classes:
                 for obj in self.__session.query(cls).all():
                     key = f'{obj.__class__.__name__}.{obj.id}'
