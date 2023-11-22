@@ -4,11 +4,9 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 import os
 from models.base_model import Base
-# Import all other classes as needed
 from models.state import State
 from models.city import City
-# Add other classes as necessary
-
+from models.user import User
 class DBStorage:
     """This class manages storage of hbnb models in a database"""
     __engine = None
@@ -35,7 +33,7 @@ class DBStorage:
                 key = f'{obj.__class__.__name__}.{obj.id}'
                 obj_dict[key] = obj
         else:
-            classes = [State, City]  # Add other classes here
+            classes = [State, City, User]  # Add other classes here
             for cls in classes:
                 for obj in self.__session.query(cls).all():
                     key = f'{obj.__class__.__name__}.{obj.id}'
