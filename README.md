@@ -143,3 +143,10 @@ Usage: <class_name>.update(<_id>, <dictionary>)
 <br>
 
 echo 'create Place city_id="1be183e2-ca8d-495b-8ab8-44ee671513fd" user_id="942c6815-b0c0-4785-a4b4-5dd49d3c87a9" name="Lovely_place" number_rooms=3 number_bathrooms=1 max_guest=6 price_by_night=120 latitude=37.773972 longitude=-122.431297' | HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./console.py
+
+echo 'create Review place_id="2b14404d-722f-475c-916b-1ae45626a484" user_id="942c6815-b0c0-4785-a4b4-5dd49d3c87a9" text="Amazing_place,_huge_kitchen"' | HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db ./console.py 
+
+autopep8 --in-place --aggressive --aggressive *.py
+
+** If you want to format all Python files in a directory recursively (i.e., including all subdirectories), you can use: **
+find . -name '*.py' -exec autopep8 --in-place --aggressive --aggressive {} \;
