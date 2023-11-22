@@ -149,10 +149,10 @@ class HBNBCommand(cmd.Cmd):
                     continue
 
             setattr(new_instance, key, value)
-
-        new_instance.save()  # Save the instance with updated attributes
+        
         print(new_instance.id)
-        storage.save()  # Save changes to storage
+        new_instance.save()  # Save the instance with updated attributes
+        # storage.save()  # Save changes to storage
 
     def help_create(self):
         """ Help information for the create method """
