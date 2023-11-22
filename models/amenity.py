@@ -10,7 +10,7 @@ class Amenity(BaseModel, Base):
     if models.storage_table == 'db':
         __tablename__ = 'amenities'
         name = Column(String(128), nullable=False)
-        place_amenities = relationship("Place", secondary="place_amenity")
+        place_amenities = relationship("Place", secondary="place_amenity", viewonly=False, overlaps="amenities")
     else:
         name = ""
 

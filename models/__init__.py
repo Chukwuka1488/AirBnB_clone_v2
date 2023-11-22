@@ -4,7 +4,7 @@
 from os import getenv
 
 # List of models to be imported when using wildcard import
-__all__ = ["BaseModel", "User", "State", "City", "Amenity", "Place", "Review"]
+__all__ = ["BaseModel", "User", "State", "City", "Amenity", "Place", "Review", "storage"]
 
 storage_table = getenv("HBNB_TYPE_STORAGE")
 
