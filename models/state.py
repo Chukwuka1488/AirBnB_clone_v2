@@ -25,7 +25,6 @@ class State(BaseModel, Base):
         @property
         def cities(self):
             """Returns the list of City instances with state_id equal to the current State.id"""
-            from models.city import City
             city_list = []
             for city in models.storage.all(City).values():
                 if city.state_id == self.id:
