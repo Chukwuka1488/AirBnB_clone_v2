@@ -3,9 +3,10 @@
 import models
 from models.base_model import BaseModel, Base
 from sqlalchemy import Column, String, ForeignKey
+from sqlalchemy.orm import relationship
 
 
-class Review(BaseModel):
+class Review(BaseModel, Base):
     """ Review class to store review information """
     if models.storage_table == 'db':
         __tablename__ = 'reviews'
