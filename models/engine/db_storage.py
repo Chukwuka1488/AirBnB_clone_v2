@@ -29,6 +29,8 @@ class DBStorage:
         """Query all objects or objects of a specific class"""
         obj_dict = {}
         if cls:
+            if isinstance(cls, str):  # If cls is a string, convert it to class object
+                cls = eval(cls)
             for obj in self.__session.query(cls).all():
                 key = f'{obj.__class__.__name__}.{obj.id}'
                 obj_dict[key] = obj
@@ -39,6 +41,7 @@ class DBStorage:
                     key = f'{obj.__class__.__name__}.{obj.id}'
                     obj_dict[key] = obj
         return obj_dict
+
 
     def new(self, obj):
         """Add an object to the current database session"""

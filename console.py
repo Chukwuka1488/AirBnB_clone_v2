@@ -230,14 +230,15 @@ class HBNBCommand(cmd.Cmd):
         print_list = []
 
         if args:
-            args = args.split(' ')[0]  # remove possible trailing args
-            if args not in HBNBCommand.classes:
+            class_name = args.split(' ')[0]  # remove possible trailing args
+            if class_name not in HBNBCommand.classes:
                 print("** class doesn't exist **")
                 return
+            cls = HBNBCommand.classes[class_name]
         else:
-            args = None
+            cls = None
 
-        objects = models.storage.all(args)
+        objects = models.storage.all(cls)
         for obj in objects.values():
             print_list.append(str(obj))
 
