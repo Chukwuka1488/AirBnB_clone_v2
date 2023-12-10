@@ -14,7 +14,7 @@ from fabric.api import *
 from os import path
 
 # Define the IP addresses of the web servers
-env.hosts = ['<IP web-01>', '<IP web-02>']
+env.hosts = ['34.207.58.187', '34.204.81.65']
 # Uncomment and set the user and SSH key if needed
 # env.user = 'ubuntu'
 # env.key_filename = 'my_ssh_private_key'

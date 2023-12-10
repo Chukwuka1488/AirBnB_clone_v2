@@ -5,12 +5,14 @@ It contains the do_deploy function which, given the path to an archive file,
 will distribute and deploy the contents to the specified web servers.
 """
 
+
 from fabric.api import env, put, run, local
 from os.path import isfile
 
-env.hosts = ['xx-web-01', 'xx-web-02']
+env.hosts = ['34.207.58.187', '34.204.81.65']
 # env.user = 'ubuntu'
 # env.key_filename = 'my_ssh_private_key'
+
 
 def do_deploy(archive_path):
     """

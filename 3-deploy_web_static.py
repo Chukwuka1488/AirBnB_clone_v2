@@ -9,13 +9,15 @@ To execute the deployment, run the following command:
 fab -f 3-deploy_web_static.py deploy -i ~/.ssh/id_rsa -u ubuntu
 """
 
+
 from fabric.api import env, local, put, run
 from datetime import datetime
 from os.path import isfile
 
-env.hosts = ['xx-web-01', 'xx-web-02']
+env.hosts = ['34.207.58.187', '34.204.81.65']
 # env.user = 'ubuntu'
 # env.key_filename = '~/.ssh/id_rsa'
+
 
 def do_pack():
     """
