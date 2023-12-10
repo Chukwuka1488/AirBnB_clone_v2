@@ -1,11 +1,32 @@
+#!/usr/bin/python3
+"""
+This module automates the deployment of web static content to web servers.
+It contains the do_deploy function which, given the path to an archive file,
+will distribute and deploy the contents to the specified web servers.
+"""
+
 from fabric.api import env, put, run, local
 from os.path import isfile
 
 env.hosts = ['xx-web-01', 'xx-web-02']
-env.user = 'ubuntu'
-env.key_filename = 'my_ssh_private_key'
+# env.user = 'ubuntu'
+# env.key_filename = 'my_ssh_private_key'
 
 def do_deploy(archive_path):
+    """
+    Deploys the web static content to the web servers.
+
+    This function takes an archive path, checks if the file exists, and then
+    proceeds to upload, uncompress, and deploy the content to the specified
+    web servers. It also updates the symbolic link to point to the new version
+    of the content.
+
+    Args:
+        archive_path (str): The path to the .tgz archive to be deployed.
+
+    Returns:
+        bool: True if the deployment succeeded, False otherwise.
+    """
     # Check if the archive_path exists and is a file
     if not isfile(archive_path):
         return False
